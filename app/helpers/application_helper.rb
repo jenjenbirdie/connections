@@ -7,4 +7,8 @@ def title
 		"#{base_title} | #{@title}"
 	end
 end
+
+def logo
+	base_logo = image_tag("logo.png", :alt => "Sample App", :class => "round")
+end
 end
