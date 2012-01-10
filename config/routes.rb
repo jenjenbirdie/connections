@@ -1,7 +1,8 @@
 Connections::Application.routes.draw do
-  get "users/new"
+  resources :users
 
-  get "users/new"
+  #get "users/new"  no need coz already added resources :users
+
   match '/signup', :to => 'users#new'
 
   #get "pages/home"
