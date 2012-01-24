@@ -6,7 +6,7 @@ gem 'rails', '3.0.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'sqlite3'
+gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -21,7 +21,7 @@ gem 'rails', '3.0.8'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
- gem 'sqlite3-ruby', '1.3.1', :require => 'sqlite3'
+# gem 'sqlite3-ruby', '1.3.1', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 gem 'gravatar_image_tag','0.1.0'

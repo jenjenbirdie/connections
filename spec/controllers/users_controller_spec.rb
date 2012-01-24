@@ -72,7 +72,5 @@ describe UsersController do
 			response.should redirect_to(user_path(assigns(:user)))
 		end
 	end
-	
   end
- 
 end
