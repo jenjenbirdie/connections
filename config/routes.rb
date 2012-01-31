@@ -1,9 +1,13 @@
 Connections::Application.routes.draw do
+  #get "sessions/new"  removed to test
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
   #get "users/new"  no need coz already added resources :users
 
   match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   #get "pages/home"
   match '/contact',  :to => 'pages#contact'
