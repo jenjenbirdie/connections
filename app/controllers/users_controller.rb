@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
 	@user = User.new(params[:user])
 	if @user.save
+		sign_in @user
 		#redirect_to @user    #this one works too
 		flash[:success] = "Welcome to the Sample App!"
 		redirect_to user_path(@user)  #alternative so rspec will understand

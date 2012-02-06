@@ -9,6 +9,6 @@ def title
 end
 
 def logo
-	base_logo = image_tag("logo.png", :alt => "Sample App", :class => "round")
+	image_tag("logo.png", :alt => "Sample App", :class => "round")
 end
 end
