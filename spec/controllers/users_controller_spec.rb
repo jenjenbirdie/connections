@@ -22,6 +22,7 @@ describe UsersController do
 				@users << Factory(:user, :email => Factory.next(:email))
 			end
 		end
+		
 		it "should be successful" do
 			 get :index
 			 response.should be_success
@@ -237,6 +238,22 @@ describe UsersController do
 		end
 	end
   end
+  
+  describe "signed-in user" do
+		before(:each) do
+			@user = Factory(:user)
+			test_sign_in(@user)
+		end	
+		it "should deny access to 'new'" do
+			get :new
+			response.should redirect_to(root_path)
+		end
+		it "should deny access to 'create'" do
+			post :create, :user => @attr
+			response.should redirect_to(root_path)
+		end
+  end
+  
   describe "DELETE 'destroy'" do
 	before(:each) do
 		@user = Factory(:user)
@@ -265,6 +282,7 @@ describe UsersController do
 				delete :destroy, :id => @user
 			end.should change(User, :count).by(-1)
 		end
+		#added for exercise 10.6 item 3
 		it "should redirect to the users page" do
 			delete :destroy, :id => @user
 			response.should redirect_to(users_path)

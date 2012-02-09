@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user, :only => :destroy
   
+  before_filter :user_in, :only => [:new, :create]
+
+  
   def index
 	@title = "All users"
 	#@users = User.all  replaced by
@@ -66,4 +69,13 @@ class UsersController < ApplicationController
 	def admin_user
 		redirect_to(root_path) unless current_user.admin?
 	end
+	
+	def user_in
+		# redirect_to(root_path) if signed_in? 
+		if signed_in?
+			flash[:warning] = "You are currently logged in. Log out to create a new user."
+			redirect_to(root_path)
+		end
+	end
+	
 end
