@@ -2,6 +2,7 @@
 
 if Rake.application
   Rake.application.deprecate('require \'rake/rdoctask\'', 'require \'rdoc/task\' (in RDoc 2.4.2+)', __FILE__)
+  #Rake.application.deprecate('require \'rdoc/task\'', 'require \'rdoc/task\' (in RDoc 2.4.2+)', __FILE__)
 end
 
 require 'rubygems'
