@@ -101,7 +101,6 @@ DEPENDENCIES
   faker (= 0.3.1)
   gravatar_image_tag (= 0.1.0)
   rails (= 3.0.8)
-  rake (= 0.8.7)
   rspec (= 2.0.1)
   rspec-rails (= 2.0.1)
   sqlite3
